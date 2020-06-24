@@ -1,7 +1,7 @@
 {
-  "name": "css-clean",
-  "version": "1.6.0",
-  "description": "A utility for formatting css and sass",
+  "name": "css-clean-fork",
+  "version": "1.6.1",
+  "description": "A utility for formatting css and sass. Forked from SeanJM",
   "main": "index.js",
   "bin": {
     "cssclean": "./index.bin.js"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SeanJM/css-clean.git"
+    "url": "git+https://github.com/420factorauthentication/css-clean.git"
   },
   "keywords": [
     "css",
@@ -22,9 +22,9 @@
   "author": "Sean MacIsaac <seanjmacisaac@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SeanJM/css-clean/issues"
+    "url": "https://github.com/420factorauthentication/css-clean/issues"
   },
-  "homepage": "https://github.com/SeanJM/css-clean#readme",
+  "homepage": "https://github.com/420factorauthentication/css-clean#readme",
   "dependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",

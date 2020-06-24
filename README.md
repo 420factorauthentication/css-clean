@@ -1,3 +1,5 @@
+###### (forked from SeanJM's [css-clean](https://www.npmjs.com/package/css-clean). All credits go to them.)
+
 # Css Clean 1.5.0
 #### License: [MIT](https://opensource.org/licenses/MIT)
 
