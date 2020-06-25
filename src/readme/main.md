@@ -45,6 +45,6 @@ css-clean exports a single function, which takes a JSON object that includes the
     var cleanCss = require("css-clean-fork")
     var output   = cleanCss({
       css       : String,
-      lineBreak : Number, // Optional, default is 80
-      tabSize   : 2,      // Optional, default is 2
-      tabChar   : ' '     // Optional, default is ' ' })
+      lineBreak : Number,      // Optional, default is 80
+      tabSize   : Number,      // Optional, default is 2
+      tabChar   : ' ' or '\t'  // Optional, default is ' ' })
