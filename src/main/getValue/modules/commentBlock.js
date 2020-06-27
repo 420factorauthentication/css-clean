@@ -45,7 +45,7 @@ function splitByLineBreak(settings, element) {
         o = [];
       }
 
-      if ('- ' === b.substr(0, 2)) {
+      if ('- ' === b.substring(0, 2)) {
         o.push('');
       }
 

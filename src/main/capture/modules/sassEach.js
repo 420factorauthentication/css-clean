@@ -4,7 +4,7 @@ function sassEach(buffer, depth) {
   let c = nested(buffer, depth);
   let m = c.arguments.split(' ');
 
-  buffer.string = buffer.string.substr(c.length);
+  buffer.string = buffer.string.substring(c.length);
 
   return {
     name : m[0],

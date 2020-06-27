@@ -13,7 +13,7 @@ function commentInline(buffer) {
     i++;
   }
 
-  buffer.string = buffer.string.substr(i);
+  buffer.string = buffer.string.substring(i);
 
   return {
     value : v.replace(/^\/\/(\s+|)/, ''),

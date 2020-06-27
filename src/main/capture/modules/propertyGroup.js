@@ -7,9 +7,9 @@ function propertyGroup(buffer) {
     i++;
   }
 
-  m = buffer.string.substr(0, i).split(':').map(a => a.trim());
+  m = buffer.string.substring(0, i).split(':').map(a => a.trim());
 
-  buffer.string = buffer.string.substr(i + 1);
+  buffer.string = buffer.string.substring(i + 1);
 
   m[1] = m.slice(1).join(':')
     .replace(/\n|;/g, '')

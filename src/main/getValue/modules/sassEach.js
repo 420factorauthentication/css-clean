@@ -5,7 +5,7 @@ function align(element, value, tab) {
   var i = 1;
   var n = value.length;
   var nameSpacing = new Array(element.name.length + 2).join(' ');
-  var spacing = new Array(value[0].substr(0, value[0].indexOf('(')).length + 1).join(' ');
+  var spacing = new Array(value[0].substring(0, value[0].indexOf('(')).length + 1).join(' ');
 
   value[0] = element.name + ' ' + value[0];
 

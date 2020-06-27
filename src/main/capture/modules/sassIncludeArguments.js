@@ -43,11 +43,11 @@ function sassIncludeArguments(buffer) {
     }
   }
 
-  args = args.substr(1, args.length - 2)
+  args = args.substring(1, 1 + args.length - 2)
     .split(',')
     .map(a => a.trim());
 
-  buffer.string = buffer.string.substr(i + 1);
+  buffer.string = buffer.string.substring(i + 1);
 
   return {
     name : name,

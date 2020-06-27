@@ -6,7 +6,7 @@ function sassFunction(buffer, depth) {
   let args = between('(', ')', c.arguments);
   let m = c.arguments.match(/(@function)\s+([^)]+?)\(/);
 
-  buffer.string = buffer.string.substr(c.length);
+  buffer.string = buffer.string.substring(c.length);
 
   return {
     content : c.content,

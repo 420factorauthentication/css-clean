@@ -6,7 +6,7 @@ function sassMixin(buffer, depth) {
   let args = between('(', ')', c.arguments);
   let m = c.arguments.match(/(@mixin)[ ]+([^\(]+)/);
 
-  buffer.string = buffer.string.substr(c.length);
+  buffer.string = buffer.string.substring(c.length);
 
   return {
     arguments : args.value

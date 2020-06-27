@@ -39,11 +39,11 @@ function isPropertyGroup(value) {
 }
 
 function getScope(string) {
-  if (string.substr(0, 2) === '//') {
+  if (string.substring(0, 2) === '//') {
     return 'comment inline';
   }
 
-  if (string.substr(0, 2) === '/*') {
+  if (string.substring(0, 2) === '/*') {
     return 'comment block';
   }
 

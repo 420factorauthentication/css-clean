@@ -4,7 +4,7 @@ function sassIf(buffer, depth) {
   let c = nested(buffer, depth);
   let m = c.arguments.match(/(@if|@else[ ]+if|@else)([\s\S]+|)/);
 
-  buffer.string = buffer.string.substr(c.length);
+  buffer.string = buffer.string.substring(c.length);
 
   return {
     name : m[1],

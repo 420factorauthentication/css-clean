@@ -10,7 +10,7 @@ function pushLine(lines, v, i) {
 
   x = lines.length - 1;
 
-  while (v.substr(i + 1, 3) !== 'and' && v[i]) {
+  while (v.substring(i + 1, i + 1 + 3) !== 'and' && v[i]) {
     lines[x] = lines[x].concat(v[i]);
     i++;
   }
@@ -45,9 +45,9 @@ function mediaQuery(buffer, depth) {
     let n = v.length;
 
     for (; i < n; i++) {
-      if (v.substr(i, 4) === 'only' && [' ', '('].indexOf(v[i + 4]) !== -1) {
+      if (v.substring(i, i + 4) === 'only' && [' ', '('].indexOf(v[i + 4]) !== -1) {
         i = pushLine(lines, v, i);
-      } else if (v.substr(i, 3) === 'and' && [' ', '('].indexOf(v[i + 3]) !== -1) {
+      } else if (v.substring(i, i + 3) === 'and' && [' ', '('].indexOf(v[i + 3]) !== -1) {
         i = pushLine(lines, v, i);
       } else {
         lines[lines.length - 1] = lines[lines.length - 1].concat(v[i]);
@@ -59,7 +59,7 @@ function mediaQuery(buffer, depth) {
       let value;
       let s;
 
-      if (line.substr(0, 4) === 'only' || line.substr(0, 3) !== 'and') {
+      if (line.substring(0, 4) === 'only' || line.substring(0, 3) !== 'and') {
         s = line.split(":");
         return s.length === 2 ? {
           type     : "feature",
@@ -81,7 +81,7 @@ function mediaQuery(buffer, depth) {
     });
   });
 
-  buffer.string = buffer.string.substr(c.length);
+  buffer.string = buffer.string.substring(c.length);
 
   return {
     content : c.content,

@@ -16,7 +16,7 @@ function formatLinearGradient(settings, element) {
     value = value
       .map(function (a, line) {
         let between = l.between('(', ')', a);
-        let gradient = a.substr(0, between.start - 1);
+        let gradient = a.substring(0, between.start - 1);
         let split = splitByComma(between.value);
         let format = split.map(b => align + singleTab + b.trim()).join(',\n');
         return line === 0
