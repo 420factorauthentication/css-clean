@@ -13,6 +13,8 @@ To install and use globally:
 Also supports [.scss](https://sass-lang.com/).
 
 ### Configuration
+[Full list of options](https://github.com/420factorauthentication/css-clean/blob/master/src/readme/options.md)
+
 To configure, create a JSON file:  
 
     {
@@ -38,13 +40,18 @@ Or both:
 
     cssclean input.css config.json --line_break=80
 
-
 ## Programmatic Usage
-css-clean exports a single function, which takes a JSON object that includes the string to process and configurable options.
+css-clean exports a single function, which takes a JSON object that includes
+the string to process and can include configurable options.
 
-    var cleanCss = require("css-clean-fork")
-    var output   = cleanCss({
-      css       : String,
-      lineBreak : Number,      // Optional, default is 80
-      tabSize   : Number,      // Optional, default is 2
-      tabChar   : ' ' or '\t'  // Optional, default is ' ' })
+Options in programmatic usage are the same as options in command line usage,
+except in camel case instead of underscore format.
+
+    var cleanCss = require("css-clean-fork");
+    var example1 = cleanCss({css: "string"});
+    var example2 = cleanCss({
+      css       : "string",
+      lineBreak : 80,
+      tabSize   : 4,
+      tabChar   : "space"
+    });

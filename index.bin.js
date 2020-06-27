@@ -42,16 +42,24 @@ for (; i < args.length; i++) {
   }
 } Object.assign(config, f);
 
-if (config.tab_char === 'space')
+if (config.tab_char.toLowerCase() === 'space')
   config.tab_char = ' ';
-else if (config.tab_char === 'tab')
+else if (config.tab_char.toLowerCase() === 'tab')
   config.tab_char = '\t';
 
 let clean = cssClean({
-  css       : fs.readFileSync(args[0], 'utf8'),
-  lineBreak : config.line_break,
-  tabSize   : config.tab_size,
-  tabChar   : config.tab_char
+  css               : fs.readFileSync(args[0], 'utf8'),
+  lineBreak         : config.line_break,
+  tabSize           : config.tab_size,
+  tabChar           : config.tab_char,
+
+  // Media Queries
+  mFeatIndentSize   : config.m_feat_indent_size,
+  mFeatStartJustify : config.m_feat_start_justify,
+  mFeatEndJustify   : config.m_feat_end_justify,
+  mTypeJustify      : config.m_type_justify,
+  mFeatStartBr      : config.m_feat_start_br,
+  mFeatEndBr        : config.m_feat_end_br
 });
 
 if (require('tty').isatty(process.stdout.fd))

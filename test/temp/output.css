@@ -1,0 +1,29 @@
+@media (min-width  : 480px))
+ and   (max-width  : 768px)
+ and   (min-height : 480px)
+ and   (max-height : 768px) {
+    #box {
+        background-color : blue;
+    }
+}
+
+@supports (display: grid) {
+    @media only screen
+     and   (min-width : 480px) {
+        @media (color)
+         and   (min-height : 480px)
+         and   (max-height : 767px) {
+            @media (color)
+             and   (min-height : 480px)
+             and   (max-height : 767px) {
+            }
+        }
+        @media (color)
+         and   (min-height : 768px)
+         and   (max-height : 991px) {
+            #box {
+                background-color : blue;
+            }
+        }
+    }
+}
