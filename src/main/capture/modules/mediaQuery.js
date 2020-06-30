@@ -55,29 +55,49 @@ function mediaQuery(buffer, depth) {
     }
 
     return lines.map(function (line) {
+      let buffer = line;
+      let type;
+      let operator;
       let property;
       let value;
-      let s;
 
-      if (line.substring(0, 4) === 'only' || line.substring(0, 3) !== 'and') {
-        s = line.split(":");
-        return s.length === 2 ? {
-          type     : "feature",
-          operator : undefined,
-          property : s[0].trim().substring(1),
-          value    : s[1].trim().substring(0, s[1].length - 2)
-        } : {
-          type     : "media",
-          value    : s[0].trim()
-        };
+      if (line.trim().substring(0, 4) === "only") {
+        buffer = line.substring(4);
+        operator = "only";
+      }
+
+      else if (line.trim().substring(0, 3) === "and" || line.substring(0, 3) === "not") {
+        buffer = line.substring(3);
+        operator = line.substring(0, 3);
+      }
+
+      if (buffer.search(/\ball\b|\bprint\b|\bscreen\b|\bspeech\b/) != -1) {
+        type = "media";
+        value = buffer.trim();
+      }
+
+      else {
+        let s = buffer.split(":");
+        type = "feature";
+
+        if (s.length === 2) {
+          property = s[0].trim().substring(1),
+          value = s[1].trim().substring(0, s[1].length - 2)
+        }
+
+        else if (buffer.search(/\(/) != -1)
+          property = getChunk(buffer, '(', ')');
+
+        else
+          property = buffer.trim();
       }
 
       return {
-        type     : "feature",
-        operator : line.split(' ')[0],
-        property : getChunk(line, '(', ':'),
-        value    : getChunk(line, ':', ')')
-      };
+        type     : type,
+        operator : operator,
+        property : property,
+        value    : value
+      }
     });
   });
 

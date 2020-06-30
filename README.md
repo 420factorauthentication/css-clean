@@ -1,8 +1,11 @@
 # Just Another CSS Kit — Only For Fun
+#### License: [MIT](https://opensource.org/licenses/MIT)
+
 Just Another CSS Kit — Only For Fun is a fork of [css-clean](https://www.npmjs.com/package/css-clean) with more customization options.
 
 ## Features
 - Updated CLI usage to accept a config file, similar to [atom-css-clean](https://atom.io/packages/atom-css-clean).
+- Added extra customization options for formatting media queries.
 
 ## Command Line Usage
 To install and use globally:
@@ -13,7 +16,7 @@ To install and use globally:
 Also supports [.scss](https://sass-lang.com/).
 
 ### Configuration
-[Full list of options](https://github.com/420factorauthentication/css-clean/blob/master/src/readme/options.md)
+[Full list of options](https://github.com/420factorauthentication/css-clean/blob/fork/src/readme/options.md)
 
 To configure, create a JSON file:  
 

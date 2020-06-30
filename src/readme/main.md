@@ -3,6 +3,7 @@ Just Another CSS Kit — Only For Fun is a fork of [css-clean](https://www.npmjs
 
 ## Features
 - Updated CLI usage to accept a config file, similar to [atom-css-clean](https://atom.io/packages/atom-css-clean).
+- Added extra customization options for formatting media queries.
 
 ## Command Line Usage
 To install and use globally:
